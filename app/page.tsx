@@ -12,18 +12,28 @@ const exploreItems = [
     kicker: "Create",
     text: "Builder-informed design support that aligns vision, budget, schedule, and constructability from the beginning.",
     image: "/images/design-01.jpg",
+ href: "/design"
   },
   {
     title: "Development Planning",
     kicker: "Plan",
     text: "Early site thinking, expansion studies, feasibility planning, and project strategy before drawings become commitments.",
     image: "/images/project-01.JPG",
+ href: "/develop"
   },
   {
-    title: "Concrete + Steel",
-    kicker: "Execute",
-    text: "In-house concrete and steel capabilities that bring greater control to the schedule, budget, and construction process.",
+      title: "Concrete",
+    kicker: "Perform",
+    text: "In-house concrete capabilities that provide greater control over quality, coordination, and schedule.",
     image: "/images/concrete-01.jpg",
+    href: "/concrete",
+  },
+  {
+    title: "Steel",
+    kicker: "Build",
+    text: "Steel building expertise for commercial, industrial, manufacturing, and specialty projects.",
+    image: "/images/steel-01.jpg",
+    href: "/steel",
   },
 ];
 
@@ -80,24 +90,19 @@ export default function Home() {
             <div className="mt-12 flex flex-wrap gap-4">
               <a
                 className="rounded-full bg-[#8b0f16] px-8 py-4 text-xs font-bold uppercase tracking-[0.22em] text-white transition hover:bg-white hover:text-[#8b0f16]"
-                href="#"
+                href="/projects"
               >
                 View Projects
               </a>
               <a
                 className="rounded-full border border-white/60 px-8 py-4 text-xs font-bold uppercase tracking-[0.22em] text-white transition hover:border-white hover:bg-white hover:text-neutral-950"
-                href="#"
+                href="/design"
               >
                 Explore Design
               </a>
             </div>
           </div>
-
-          <div className="absolute bottom-10 left-6 hidden items-center gap-5 text-xs font-bold uppercase tracking-[0.26em] text-white/70 md:left-10 md:flex">
-            <span>Scroll</span>
-            <span className="h-px w-20 bg-white/40" />
-          </div>
-        </div>
+	 </div>
       </section>
 
     <section className="bg-white px-6 py-24 md:px-10 md:py-32">
@@ -141,21 +146,22 @@ export default function Home() {
 </section>
 
       <section className="bg-[#111111] text-white">
-        <div className="grid min-h-[620px] grid-cols-1 md:grid-cols-4">
+        <div className="grid min-h-[620px] grid-cols-1 md:grid-cols-12">
           {exploreItems.map((item, index) => (
-            <a
-              key={item.title}
-              href="#"
-              className={`group relative flex min-h-[430px] overflow-hidden border-white/20 p-8 transition duration-500 hover:bg-white hover:text-neutral-950 md:min-h-[620px] md:border-l ${
-                index === 0 ? "bg-white text-neutral-950 md:border-l-0" : ""
-              }`}
-            >
-              <div
-                className={`absolute inset-0 bg-cover bg-center opacity-0 transition duration-500 group-hover:scale-105 group-hover:opacity-25 ${
-                  index === 0 ? "opacity-10" : ""
-                }`}
-                style={{ backgroundImage: `url(${item.image})` }}
-              />
+           <a
+  key={item.title}
+  href={item.href}
+  className={`group relative flex min-h-[430px] overflow-hidden border-white/20 p-8 transition duration-500 hover:bg-white hover:text-neutral-950 md:min-h-[620px] md:border-l ${
+    index === 0 ? "bg-white text-neutral-950 md:border-l-0" : ""
+  } ${
+    index < 2 ? "md:col-span-3" : "md:col-span-2"
+  }`}
+>              <div
+  className={`absolute inset-0 bg-cover bg-center opacity-0 transition duration-500 group-hover:scale-105 group-hover:opacity-25 ${
+    index === 0 ? "opacity-35" : ""
+  }`}
+  style={{ backgroundImage: `url(${item.image})` }}
+/>
               <div
                 className={`absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-80 ${
                   index === 0

@@ -2,6 +2,7 @@ type NavbarProps = {
   active?:
     | "construction"
     | "design"
+    | "develop"
     | "projects"
     | "locations"
     | "about"
@@ -72,6 +73,10 @@ export default function Navbar({
 
           <a href="/design" className={navLinkClass("design")}>
             Design
+          </a>
+
+	  <a href="/develop" className={navLinkClass("develop")}>
+            Develop
           </a>
 
           <a href="/projects" className={navLinkClass("projects")}>
