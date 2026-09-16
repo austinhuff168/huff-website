@@ -10,7 +10,7 @@ const values = [
 export default function ourteamPage() {
   return (
     <main className="bg-white text-neutral-950">
-      <Navbar active="OUR TEAM" solid />
+      <Navbar solid />
 
       <section className="px-6 pb-24 pt-40 md:px-10">
         <div className="mx-auto max-w-[1500px]">
