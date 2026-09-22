@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 
 const values = [
@@ -23,7 +26,40 @@ const values = [
   },
 ];
 
+const founderSlides = [
+  {
+    image: "/images/roger-huff.jpg",
+    name: "Roger Huff",
+    title: "Founder",
+    caption:
+      "Roger Huff, owner of Huff Construction, works Tuesday on the framework of the new North Highland United Methodist Church on the corner of 15th Avenue Northeast and North Lloyd Street. Despite the cold weather, area construction projects continue to move along. Huff said the church could be ready for use by Easter, providing the weather holds up. American News Photo by John Davis",
+  },
+  {
+ 
+    image: "/images/cory-huff.jpg",
+    name: "A Growing Company",
+    title: "The Next Generation",
+    caption:
+      "Cory Huff, left, and Chad Huff work on the framework of the second floor of the Holiday Inn Express Tuesday, which is under construction across from the Lakewood Mall. Huff Construction, of Aberdeen, is one of several companies working on the motel. American News Photo by John Davis",
+  },
+];
+
 export default function About() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const nextSlide = () => {
+    setActiveSlide((current) => (current + 1) % founderSlides.length);
+  };
+
+  const previousSlide = () => {
+    setActiveSlide(
+      (current) =>
+        (current - 1 + founderSlides.length) % founderSlides.length
+    );
+  };
+
+  const slide = founderSlides[activeSlide];
+
   return (
     <main className="min-h-screen bg-white text-neutral-950">
       <Navbar active="about" />
@@ -53,16 +89,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* 40+ YEARS */}
+      {/* 45+ YEARS */}
       <section className="bg-white px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#8b0f16]">
-              Since 1980
+              Since 1979
             </p>
 
             <p className="mt-5 text-7xl font-black tracking-[-0.06em] md:text-9xl">
-              40+
+              45+
             </p>
 
             <p className="mt-1 text-xl font-semibold uppercase tracking-[0.08em]">
@@ -72,15 +108,143 @@ export default function About() {
 
           <div>
             <h2 className="max-w-4xl text-5xl font-light leading-[1.08] tracking-[-0.045em] md:text-7xl">
-              Leaders in construction for over 40 years.
+              A LEADER IN THE CONSTRUCTION INDUSTRY.
             </h2>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-neutral-600">
-              Huff Construction has built its reputation through decades of
-              experience, strong relationships, and a commitment to delivering
-              quality work. We bring that experience to every project while
-              continuing to evolve how we plan, design, and build.
+              Through more than 45 years of experience as a General Contractor,
+              Huff Construction has earned a strong reputation for leadership
+              in the industry and has become a well-respected construction
+              company in South Dakota and surrounding areas. Integrity, quality,
+              and excellence are at the core of every action we take, and our
+              clients willingly speak in a positive manner on behalf of our
+              company.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FOUNDER / HISTORY */}
+      <section className="bg-neutral-100 px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center lg:gap-20">
+
+          {/* HISTORY IMAGE CAROUSEL */}
+          <div>
+            <div className="relative">
+              <div className="overflow-hidden bg-neutral-200">
+                <img
+                  key={slide.image}
+                  src={slide.image}
+                  alt={slide.name}
+                  className="h-[520px] w-full object-cover object-top md:h-[650px]"
+                />
+              </div>
+
+              {/* PREVIOUS ARROW */}
+              <button
+                type="button"
+                onClick={previousSlide}
+                aria-label="Previous history image"
+                className="absolute left-5 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-neutral-950 shadow-md transition hover:bg-white"
+              >
+                ←
+              </button>
+
+              {/* NEXT ARROW */}
+              <button
+                type="button"
+                onClick={nextSlide}
+                aria-label="Next history image"
+                className="absolute right-5 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-neutral-950 shadow-md transition hover:bg-white"
+              >
+                →
+              </button>
+
+              {/* TITLE BOX */}
+              <div className="absolute bottom-0 right-0 min-w-[190px] translate-y-1/2 bg-[#8b0f16] px-7 py-5 text-white">
+                <p className="text-lg font-semibold uppercase tracking-[0.04em]">
+                  {slide.name}
+                </p>
+
+                <p className="mt-1 text-xs font-medium uppercase tracking-[0.22em] text-white/70">
+                  {slide.title}
+                </p>
+              </div>
+            </div>
+
+            {/* IMAGE CAPTION */}
+            <div className="mt-16">
+              <div className="max-w-[72%] border-l-2 border-[#8b0f16] pl-4">
+                <p className="text-sm leading-6 text-neutral-500">
+                  {slide.caption}
+                </p>
+              </div>
+
+              {/* SLIDE INDICATORS */}
+              <div className="mt-6 flex items-center gap-3">
+                {founderSlides.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setActiveSlide(index)}
+                    aria-label={`View history image ${index + 1}`}
+                    className={`h-[3px] transition-all ${
+                      activeSlide === index
+                        ? "w-10 bg-[#8b0f16]"
+                        : "w-6 bg-neutral-300 hover:bg-neutral-400"
+                    }`}
+                  />
+                ))}
+
+                <span className="ml-2 text-xs font-medium tracking-[0.15em] text-neutral-400">
+                  {String(activeSlide + 1).padStart(2, "0")} /{" "}
+                  {String(founderSlides.length).padStart(2, "0")}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* HISTORY */}
+          <div className="md:py-10">
+            <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#8b0f16]">
+              Where It Started
+            </p>
+
+            <h2 className="mt-6 max-w-2xl text-5xl font-light leading-[1.05] tracking-[-0.045em] md:text-7xl">
+              BUILT FROM THE GROUND UP.
+            </h2>
+
+            <div className="mt-8 h-px w-16 bg-[#8b0f16]" />
+
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-600">
+              Roger Huff began working in the construction industry in 1967
+              alongside his father, George Huff, in Wilmot, South Dakota. After
+              getting married, Roger and his family moved to Aberdeen, where
+              they continue to reside today. In 1979, Roger founded Huff
+              Construction, which later became Huff Construction, Inc. as the
+              company continued to grow. Over the years, the business expanded
+              to include his two sons, Chad and Cory, along with the team that
+              has helped shape the company into what it is today.
+            </p>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
+              Today, Huff Construction continues to build on that foundation,
+              serving clients and communities throughout the region while
+              carrying forward a culture centered on relationships, integrity,
+              and quality workmanship.
+            </p>
+
+            <div className="mt-12 flex items-center gap-5">
+              <span className="text-5xl font-light tracking-[-0.05em] text-[#8b0f16]">
+                1979
+              </span>
+
+              <div className="h-px w-20 bg-neutral-300" />
+
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-neutral-500">
+                Huff Construction Founded
+              </span>
+            </div>
           </div>
         </div>
       </section>

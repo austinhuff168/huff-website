@@ -2,171 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-
-const projects = [
-  {
-    name: "Aberdeen Dental Clinic",
-    slug: "aberdeen-dental-clinic",
-    market: "Healthcare",
-    location: "Aberdeen, SD",
-    size: "10,000 SF",
-    delivery: "Design-Build",
-    image: "/images/projects/dakota_dentistry_1.png",
-  },
-  {
-    name: "Dacotah Bank Headquarters",
-    slug: "dacotah-bank-headquarters",
-    market: "Commercial",
-    location: "Aberdeen, SD",
-    size: "42,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/DB_1.jpg",
-  },
-  {
-    name: "Sioux Falls Career Tech Addition",
-    slug: "sioux-falls-career-tech-addition",
-    market: "Education/Industrial",
-    location: "Sioux Falls, SD",
-    size: "68,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/CTE_1.JPeG",
-  },
-  {
-    name: "Dynamic Dental",
-    slug: "dynamic-dental",
-    market: "Healthcare",
-    location: "Watertown, SD",
-    size: "18,500 SF",
-    delivery: "Construction",
-    image: "/images/projects/project-01.JPG",
-  },
-  {
-    name: "NSU Gerber Hall",
-    slug: "nsu-gerber-hall",
-    market: "Education",
-    location: "Aberdeen, SD",
-    size: "31,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Gerber_Hall_1.jpg",
-  },
-  {
-    name: "Aberdeen Dermatology",
-    slug: "Aberdeen-Dermatology",
-    market: "Healthcare",
-    location: "Aberdeen, SD",
-    size: "22,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Aberdeen_Dermatology_01.jpg",
-  },
-  {
-    name: "Huff Headquarters",
-    slug: "Huff-Headquarters",
-    market: "Business",
-    location: "Aberdeen, SD",
-    size: "22,000 SF",
-    delivery: "Design-Build",
-    image: "/images/projects/Huff_HQ_1.jpg",
-  },
- {
-    name: "Malpert Insurance",
-    slug: "Malpert-Insurance",
-    market: "Business",
-    location: "Redfield, SD",
-    size: "22,000 SF",
-    delivery: "Design-Build",
-    image: "/images/projects/Malpert_1.jpg",
-  },
- {
-    name: "Elk Point Jefferson Addition",
-    slug: "Elk-Point-Jefferson",
-    market: "Education",
-    location: "Elk Point, SD",
-    size: "22,000 SF",
-    delivery: "Construction Manager",
-    image: "/images/projects/ElkPoint_2.jpg",
-  },
- {
-    name: "Watertown City Hall",
-    slug: "Watertown-City-Hall",
-    market: "Business",
-    location: "Watertown, SD",
-    size: "22,000 SF",
-    delivery: "General Contractor",
-    image: "/images/projects/Watertown_Cityhall_1.jpg",
-  },
- {
-    name: "Taco Johns",
-    slug: "Taco-Johns",
-    market: "Business",
-    location: "Aberdeen, SD",
-    size: "22,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/TacoJohns_1",
-  },
- {
-    name: "Norfolk Middle School Addition",
-    slug: "Norfolk-Middle-School",
-    market: "Education",
-    location: "Norfolk,NE",
-    size: "22,000 SF",
-    delivery: "Construction Manager",
-    image: "/images/projects/Norfolk_Middle_1.jpg",
-  },
- {
-    name: "Malchow's Plaza",
-    slug: "Malchow's-Plaza",
-    market: "Community",
-    location: "Aberdeen, SD",
-    size: "22,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Malchows_1.JPG",
-  },
- {
-    name: "Presentation Place",
-    slug: "Presentation-Place",
-    market: "Multi-Family",
-    location: "Aberdeen, SD",
-    size: "22,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Presentation_Place_1.jpg",
-  },
- {
-    name: "Britton/Hecla Community Center",
-    slug: "Britton/Hecla-Community-Center",
-    market: "Community",
-    location: "Britton, SD",
-    size: "21,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Britton_1.jpg",
-  },
- {
-    name: "The Auto Spa",
-    slug: "The-Auto-Spa",
-    market: "Business",
-    location: "Aberdeen, SD",
-    size: "5,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/LustAuto_1.jpg",
-  },
- {
-    name: "Heiser's Jewelry",
-    slug: "Heiser's Jewlry",
-    market: "Multi-Family",
-    location: "Aberdeen, SD",
-    size: "8,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Heisers_1.jpg",
-  },
- {
-    name: "Presentation Place",
-    slug: "Presentation-Place",
-    market: "Multi-Family",
-    location: "Aberdeen, SD",
-    size: "22,000 SF",
-    delivery: "Construction",
-    image: "/images/projects/Presentation_Place_1.jpg",
-  },
-];
+import { projects } from "./data/page";
 
 const stats = [
   ["125+", "Projects Completed"],
@@ -237,8 +73,8 @@ export default function ProjectsPage() {
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
                 style={{
-                  backgroundImage: `url(${featured.image})`,
-                }}
+  backgroundImage: `url(${featured.images[0]})`,
+}}
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
@@ -300,9 +136,9 @@ export default function ProjectsPage() {
 >
         <div
           className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
-          style={{
-            backgroundImage: `url(${project.image})`,
-          }}
+         style={{
+  backgroundImage: `url(${project.images[0]})`,
+}}
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />

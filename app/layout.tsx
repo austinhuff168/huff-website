@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
+const barlow = Barlow({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  weight: ["100", "200", "300", "400", "500", "600"],
   display: "swap",
 });
 
@@ -20,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-manrope)]">
+    <html lang="en" className="h-full antialiased">
+      <body className={`${barlow.className} min-h-full flex flex-col`}>
         {children}
       </body>
     </html>

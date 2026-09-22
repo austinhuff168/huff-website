@@ -10,15 +10,6 @@ const capabilities = [
   "Commercial + Industrial",
 ];
 
-const gallery = [
-  "/images/concrete/concrete-01.jpg",
-  "/images/concrete/concrete-02.jpg",
-  "/images/concrete/concrete-03.jpg",
-  "/images/concrete/concrete-04.jpg",
-  "/images/concrete/concrete-05.jpg",
-  "/images/concrete/concrete-06.jpg",
-];
-
 export default function ConcretePage() {
   return (
     <main className="bg-white text-neutral-950">
@@ -129,91 +120,116 @@ export default function ConcretePage() {
       </section>
 
       {/* IMAGE FEATURE */}
-      <section className="grid md:grid-cols-[1.35fr_0.65fr]">
-        <div className="relative min-h-[650px] overflow-hidden">
-          <Image
-            src={gallery[4]}
-            alt="Concrete construction"
-            fill
-            className="object-cover"
-          />
-        </div>
+<section className="grid md:grid-cols-[1.35fr_0.65fr]">
+  <div className="relative min-h-[650px] overflow-hidden">
+    <Image
+      src="/images/concrete/concrete-01.jpg"
+      alt="Concrete construction"
+      fill
+      className="object-cover"
+    />
+  </div>
 
-        <div className="flex items-center bg-[#8b0f16] px-8 py-20 text-white md:px-14">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-white/60">
-              Built In-House
-            </p>
+  <div className="flex items-center bg-[#8b0f16] px-8 py-20 text-white md:px-14">
+    <div>
+      <p className="text-xs font-bold uppercase tracking-[0.35em] text-white/60">
+        Built In-House
+      </p>
 
-            <h2 className="mt-6 text-4xl font-light leading-[1.05] tracking-[-0.04em] md:text-5xl">
-              Fewer handoffs.
-              <br />
-              Better control.
-            </h2>
+      <h2 className="mt-6 text-4xl font-light leading-[1.05] tracking-[-0.04em] md:text-5xl">
+        Fewer handoffs.
+        <br />
+        Better control.
+      </h2>
 
-            <p className="mt-7 max-w-md leading-8 text-white/75">
-              Bringing concrete expertise into the construction team improves
-              communication between the field, project management, scheduling,
-              and the work that follows.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p className="mt-7 max-w-md leading-8 text-white/75">
+        Bringing concrete expertise into the construction team improves
+        communication between the field, project management, scheduling,
+        and the work that follows.
+      </p>
+    </div>
+  </div>
+</section>
 
-      {/* PHOTO GRID */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#8b0f16]">
-                In The Field
-              </p>
+{/* PHOTO GRID */}
+<section className="px-6 py-24 md:px-10 md:py-32">
+  <div className="mx-auto max-w-[1500px]">
 
-              <h2 className="mt-5 text-5xl font-light tracking-[-0.045em] md:text-6xl">
-                The work speaks for itself.
-              </h2>
-            </div>
-          </div>
+    <div>
+      <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#8b0f16]">
+        In The Field
+      </p>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-12">
-            <div className="relative min-h-[540px] overflow-hidden md:col-span-7">
-              <Image
-                src={gallery[2]}
-                alt="Huff concrete project"
-                fill
-                className="object-cover transition duration-700 hover:scale-105"
-              />
-            </div>
+      <h2 className="mt-5 text-5xl font-light tracking-[-0.045em] md:text-6xl">
+        The work speaks for itself.
+      </h2>
+    </div>
 
-            <div className="relative min-h-[540px] overflow-hidden md:col-span-5">
-              <Image
-                src={gallery[3]}
-                alt="Huff concrete project"
-                fill
-                className="object-cover transition duration-700 hover:scale-105"
-              />
-            </div>
+    <div className="mt-14 grid gap-5 md:grid-cols-12">
 
-            <div className="relative min-h-[380px] overflow-hidden md:col-span-5">
-              <Image
-                src={gallery[4]}
-                alt="Huff concrete project"
-                fill
-                className="object-cover transition duration-700 hover:scale-105"
-              />
-            </div>
+      {/* CONCRETE 02 */}
+      <div className="relative min-h-[500px] overflow-hidden md:col-span-7">
+        <Image
+          src="/images/concrete/concrete-02.jpg"
+          alt="Huff concrete project"
+          fill
+          className="object-cover transition duration-700 hover:scale-105"
+        />
+      </div>
 
-            <div className="relative min-h-[380px] overflow-hidden md:col-span-7">
-              <Image
-                src={gallery[5]}
-                alt="Huff concrete project"
-                fill
-                className="object-cover transition duration-700 hover:scale-105"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CONCRETE 03 */}
+      <div className="relative min-h-[500px] overflow-hidden md:col-span-5">
+        <Image
+          src="/images/concrete/concrete-03.jpg"
+          alt="Huff concrete project"
+          fill
+          className="object-cover transition duration-700 hover:scale-105"
+        />
+      </div>
+
+      {/* CONCRETE 04 */}
+      <div className="relative min-h-[360px] overflow-hidden md:col-span-4">
+        <Image
+          src="/images/concrete/concrete-04.jpg"
+          alt="Huff concrete project"
+          fill
+          className="object-cover transition duration-700 hover:scale-105"
+        />
+      </div>
+
+      {/* CONCRETE 05 */}
+      <div className="relative min-h-[360px] overflow-hidden md:col-span-4">
+        <Image
+          src="/images/concrete/concrete-05.jpg"
+          alt="Huff concrete project"
+          fill
+          className="object-cover transition duration-700 hover:scale-105"
+        />
+      </div>
+
+      {/* CONCRETE 06 */}
+      <div className="relative min-h-[360px] overflow-hidden md:col-span-4">
+        <Image
+          src="/images/concrete/concrete-06.jpg"
+          alt="Huff concrete project"
+          fill
+          className="object-cover transition duration-700 hover:scale-105"
+        />
+      </div>
+
+      {/* CONCRETE 07 */}
+      <div className="relative min-h-[440px] overflow-hidden md:col-span-12">
+        <Image
+          src="/images/concrete/concrete-07.jpg"
+          alt="Huff concrete project"
+          fill
+          className="object-cover transition duration-700 hover:scale-105"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* VALUE */}
       <section className="bg-neutral-100 px-6 py-24 md:px-10 md:py-28">
