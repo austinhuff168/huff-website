@@ -393,9 +393,9 @@ const currentReview = customerReviews[reviewIndex];
                 </div>
 
                 <div className="pt-6">
-                  {project.category && (
+                  {project.market && (
                     <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#b21b24]">
-                      {project.category}
+                      {project.market}
                     </p>
                   )}
 
