@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import { projects } from "./data/page";
+import { projects } from "./data/projects";
 
 const stats = [
   ["125+", "Projects Completed"],

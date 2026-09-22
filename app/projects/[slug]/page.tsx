@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { projects } from "../data/page";
+import { projects } from "../data/projects";
 
 export default async function ProjectPage({
   params,
